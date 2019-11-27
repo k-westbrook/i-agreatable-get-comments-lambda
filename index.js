@@ -8,7 +8,7 @@ exports.handler = async function (event) {
       database: process.env.DATABASE_NAME
     });
     await client.connect();
-    let results = await client.query(`SELECT id,name,comment
+    let results = await client.query(`SELECT comment_id,name,comment
     FROM public."Comments" WHERE restaurant_id = ${event.pathParameters.restaurantId};`);
 
     let response =

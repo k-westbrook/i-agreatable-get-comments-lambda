@@ -9,7 +9,7 @@ exports.handler = async function (event) {
     });
     await client.connect();
     let results = await client.query(`SELECT comment_id,name,comment
-    FROM public."Comments" WHERE restaurant_id = ${event.pathParameters.restaurantId};`);
+    FROM public."comment" WHERE restaurant_id = ${event.pathParameters.restaurantId};`);
 
     let response =
     {
